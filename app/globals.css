@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-geist-sans: 'Geist', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  background: #0a0a0f;
+  color: #fff;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#__next {
+  min-height: 100%;
+}
+
+.app-shell {
+  width: min(100%, 1280px);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(18, 18, 30, 0.94) 0%, rgba(10, 10, 15, 0.98) 28%, #0a0a0f 100%);
+}
+
+.shell-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .app-shell {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0px; height: 0px; }
+
+/* Chips horizontal scroll */
+.chips-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.chips-scroll::-webkit-scrollbar { display: none; }
+
+/* Smooth transitions for interactive elements */
+button, [role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Gradient bar animation */
+@keyframes barGrow {
+  from { width: 0%; }
+  to { width: var(--bar-width); }
+}
+
+.bar-animated {
+  animation: barGrow 0.6s ease-out forwards;
+}
+
+/* Live dot pulse */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+.live-dot {
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+/* Card hover glow */
+.market-card-hot {
+  box-shadow: 0 0 0 0.5px rgba(251, 146, 60, 0.3);
+}
+.market-card-hot:hover {
+  box-shadow: 0 0 0 1px rgba(251, 146, 60, 0.5), 0 4px 24px rgba(251, 146, 60, 0.08);
+}
+.market-card-default:hover {
+  box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.35), 0 4px 24px rgba(167, 139, 250, 0.06);
+}
+
+/* Bet flash animation */
+@keyframes betFlash {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.96); }
+  60% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+.bet-flash {
+  animation: betFlash 0.4s ease-out;
+}
+
+/* Stagger fade-up for cards */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.35s ease-out both;
+}
+
+/* Tab content transition */
+@keyframes tabIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tab-content {
+  animation: tabIn 0.2s ease-out;
+}
