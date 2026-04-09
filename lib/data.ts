@@ -211,8 +211,8 @@ export const KOLS: KOL[] = [
   {
     initials: "NF",
     color: "pink",
-    name: "NFTqueen",
-    handle: "@nftqueen",
+    name: "NFTking",
+    handle: "@nftking",
     followers: "18.9k",
     markets: 2,
     badge: "hot",
