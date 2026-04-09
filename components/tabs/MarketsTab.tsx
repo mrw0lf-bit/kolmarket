@@ -23,7 +23,7 @@ export function MarketsTab({ onBet }: MarketsTabProps) {
             className={cn(
               "px-3 py-1 rounded-full text-[12px] whitespace-nowrap border transition-all duration-150",
               activeChip === i
-                ? "bg-violet-400/15 text-violet-400 border-violet-400/35"
+                ? "accent-bg-soft accent-text accent-border-soft"
                 : "text-white/50 border-white/10 hover:border-white/20"
             )}
           >
@@ -80,7 +80,7 @@ export function MarketsTab({ onBet }: MarketsTabProps) {
               <div
                 className={cn(
                   "w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-medium",
-                  kol.color === "purple" && "bg-violet-400/20 text-violet-400",
+                  kol.color === "purple" && "accent-bg-soft accent-text",
                   kol.color === "blue" && "bg-blue-400/15 text-blue-400",
                   kol.color === "orange" && "bg-orange-400/15 text-orange-400"
                 )}
@@ -92,7 +92,7 @@ export function MarketsTab({ onBet }: MarketsTabProps) {
                 <div className="text-[11px] text-white/30">{kol.markets} active markets</div>
               </div>
             </div>
-            <span className="text-[12px] text-violet-400 font-medium">{kol.vol}</span>
+            <span className="accent-text text-[12px] font-medium">{kol.vol}</span>
           </div>
         ))}
       </div>

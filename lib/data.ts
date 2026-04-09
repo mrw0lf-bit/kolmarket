@@ -1,5 +1,6 @@
 export type AvatarColor = "purple" | "green" | "orange" | "blue" | "pink";
 export type BadgeType = "live" | "hot" | "soon";
+export type MarketCategory = "All" | "Crypto" | "X posts" | "SOL gains" | "Livestream" | "Followers";
 
 export interface Market {
   id: string;
@@ -13,9 +14,10 @@ export interface Market {
   noPct: number;
   pool: string;
   timerId?: string;
-  initialTime?: [number, number]; // [min, sec]
+  initialTime?: [number, number];
   startsIn?: string;
   isHot?: boolean;
+  category: MarketCategory;
 }
 
 export interface KOL {
@@ -57,169 +59,52 @@ export interface Bet {
 
 export const MARKETS: Market[] = [
   {
-    id: "m1",
-    kolInitials: "Reljoo",
-    kolColor: "purple",
-    kolName: "Reljoo",
-    kolHandle: "@reljoo",
-    badge: "hot",
-    question: "Will Reljoo make 100 SOL today?",
-    yesPct: 64,
-    noPct: 36,
-    pool: "182 SOL",
-    timerId: "t1",
-    initialTime: [14, 32],
-    isHot: true,
+    id: "m1", kolInitials: "AJ", kolColor: "purple", kolName: "AlphaJeet", kolHandle: "@alphajeet",
+    badge: "hot", question: "Will AlphaJeet make 100 SOL today?",
+    yesPct: 64, noPct: 36, pool: "182 SOL", timerId: "t1", initialTime: [14, 32], isHot: true, category: "SOL gains",
   },
   {
-    id: "m2",
-    kolInitials: "SB",
-    kolColor: "green",
-    kolName: "FlippingProfit",
-    kolHandle: "@flippingprofit",
-    badge: "live",
-    question: "Will FlippingProfit's next post hit 100 likes?",
-    yesPct: 71,
-    noPct: 29,
-    pool: "96 SOL",
-    timerId: "t2",
-    initialTime: [8, 17],
+    id: "m2", kolInitials: "SB", kolColor: "green", kolName: "SolBull", kolHandle: "@solbull",
+    badge: "live", question: "Will SolBull's next post hit 100 likes?",
+    yesPct: 71, noPct: 29, pool: "96 SOL", timerId: "t2", initialTime: [8, 17], category: "X posts",
   },
   {
-    id: "m3",
-    kolInitials: "CK",
-    kolColor: "orange",
-    kolName: "Orangie",
-    kolHandle: "@orangie",
-    badge: "live",
-    question: "Will Orangie post 3+ times today?",
-    yesPct: 45,
-    noPct: 55,
-    pool: "54 SOL",
-    timerId: "t3",
-    initialTime: [22, 5],
+    id: "m3", kolInitials: "CK", kolColor: "orange", kolName: "CryptoKing", kolHandle: "@cryptoking",
+    badge: "live", question: "Will CryptoKing post 3+ times today?",
+    yesPct: 45, noPct: 55, pool: "54 SOL", timerId: "t3", initialTime: [22, 5], category: "X posts",
   },
   {
-    id: "m4",
-    kolInitials: "DG",
-    kolColor: "blue",
-    kolName: "Euris",
-    kolHandle: "@Euris",
-    badge: "soon",
-    question: "Will Euris's call 10x in 24h?",
-    yesPct: 22,
-    noPct: 78,
-    pool: "210 SOL",
-    startsIn: "Starts in 5m",
+    id: "m4", kolInitials: "DG", kolColor: "blue", kolName: "DegenGuru", kolHandle: "@degenguru",
+    badge: "soon", question: "Will DegenGuru's call 10x in 24h?",
+    yesPct: 22, noPct: 78, pool: "210 SOL", startsIn: "Starts in 5m", category: "Crypto",
   },
   {
-    id: "m5",
-    kolInitials: "NF",
-    kolColor: "pink",
-    kolName: "NFTqueen",
-    kolHandle: "@nftqueen",
-    badge: "hot",
-    question: "Will NFTqueen gain 500 followers today?",
-    yesPct: 58,
-    noPct: 42,
-    pool: "77 SOL",
-    timerId: "t5",
-    initialTime: [31, 44],
-    isHot: true,
+    id: "m5", kolInitials: "NF", kolColor: "pink", kolName: "NFTqueen", kolHandle: "@nftqueen",
+    badge: "hot", question: "Will NFTqueen gain 500 followers today?",
+    yesPct: 58, noPct: 42, pool: "77 SOL", timerId: "t5", initialTime: [31, 44], isHot: true, category: "Followers",
   },
   {
-    id: "m6",
-    kolInitials: "SW",
-    kolColor: "purple",
-    kolName: "SolWhale",
-    kolHandle: "@solwhale",
-    badge: "live",
-    question: "Will SolWhale's tweet get 500 views?",
-    yesPct: 83,
-    noPct: 17,
-    pool: "130 SOL",
-    timerId: "t6",
-    initialTime: [3, 58],
+    id: "m6", kolInitials: "SW", kolColor: "purple", kolName: "SolWhale", kolHandle: "@solwhale",
+    badge: "live", question: "Will SolWhale's tweet get 500 views?",
+    yesPct: 83, noPct: 17, pool: "130 SOL", timerId: "t6", initialTime: [3, 58], category: "X posts",
   },
-    {
-    id: "m6",
-    kolInitials: "SW",
-    kolColor: "purple",
-    kolName: "SolWhale",
-    kolHandle: "@solwhale",
-    badge: "live",
-    question: "Will SolWhale's tweet get 500 views?",
-    yesPct: 83,
-    noPct: 17,
-    pool: "130 SOL",
-    timerId: "t6",
-    initialTime: [3, 58],
+  {
+    id: "m7", kolInitials: "AJ", kolColor: "purple", kolName: "AlphaJeet", kolHandle: "@alphajeet",
+    badge: "live", question: "Will AlphaJeet go live on X today?",
+    yesPct: 55, noPct: 45, pool: "44 SOL", timerId: "t7", initialTime: [18, 0], category: "Livestream",
   },
-    {
-    id: "m6",
-    kolInitials: "SW",
-    kolColor: "purple",
-    kolName: "SolWhale",
-    kolHandle: "@solwhale",
-    badge: "live",
-    question: "Will SolWhale's tweet get 500 views?",
-    yesPct: 83,
-    noPct: 17,
-    pool: "130 SOL",
-    timerId: "t6",
-    initialTime: [3, 58],
+  {
+    id: "m8", kolInitials: "DG", kolColor: "blue", kolName: "DegenGuru", kolHandle: "@degenguru",
+    badge: "hot", question: "Will DegenGuru's SOL bag flip 2x this week?",
+    yesPct: 39, noPct: 61, pool: "310 SOL", timerId: "t8", initialTime: [45, 10], isHot: true, category: "SOL gains",
   },
 ];
 
 export const KOLS: KOL[] = [
-  {
-    initials: "AJ",
-    color: "purple",
-    name: "AlphaJeet",
-    handle: "@alphajeet",
-    followers: "48.2k",
-    markets: 4,
-    badge: "live",
-    volume: "182 SOL",
-    accuracy: "68%",
-    bettors: 142,
-  },
-  {
-    initials: "DG",
-    color: "blue",
-    name: "DegenGuru",
-    handle: "@degenguru",
-    followers: "92.1k",
-    markets: 2,
-    badge: "hot",
-    volume: "210 SOL",
-    accuracy: "54%",
-    bettors: 89,
-  },
-  {
-    initials: "CK",
-    color: "orange",
-    name: "CryptoKing",
-    handle: "@cryptoking",
-    followers: "31.4k",
-    markets: 3,
-    badge: "live",
-    volume: "98 SOL",
-    accuracy: "71%",
-    bettors: 63,
-  },
-  {
-    initials: "NF",
-    color: "pink",
-    name: "NFTking",
-    handle: "@nftking",
-    followers: "18.9k",
-    markets: 2,
-    badge: "hot",
-    volume: "77 SOL",
-    accuracy: "61%",
-    bettors: 44,
-  },
+  { initials: "AJ", color: "purple", name: "AlphaJeet", handle: "@alphajeet", followers: "48.2k", markets: 4, badge: "live", volume: "182 SOL", accuracy: "68%", bettors: 142 },
+  { initials: "DG", color: "blue", name: "DegenGuru", handle: "@degenguru", followers: "92.1k", markets: 2, badge: "hot", volume: "210 SOL", accuracy: "54%", bettors: 89 },
+  { initials: "CK", color: "orange", name: "CryptoKing", handle: "@cryptoking", followers: "31.4k", markets: 3, badge: "live", volume: "98 SOL", accuracy: "71%", bettors: 63 },
+  { initials: "NF", color: "pink", name: "NFTqueen", handle: "@nftqueen", followers: "18.9k", markets: 2, badge: "hot", volume: "77 SOL", accuracy: "61%", bettors: 44 },
 ];
 
 export const TRENDING_KOLS: TrendingKOL[] = [
@@ -236,4 +121,6 @@ export const LEADERBOARD: LeaderEntry[] = [
   { rank: 5, address: "alphahunter.sol", gain: "+11.2 SOL" },
 ];
 
-export const FILTER_CHIPS = ["All", "Crypto", "X posts", "SOL gains", "Livestream", "Followers"];
+export const FILTER_CHIPS: MarketCategory[] = [
+  "All", "Crypto", "X posts", "SOL gains", "Livestream", "Followers",
+];

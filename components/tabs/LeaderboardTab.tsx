@@ -45,7 +45,7 @@ export function LeaderboardTab() {
           <div className="mb-3 text-[11px] uppercase tracking-widest text-white/30">This week</div>
           <div className="grid grid-cols-3 gap-3 text-center">
             <div>
-              <div className="text-[16px] font-medium text-violet-400">1,842</div>
+              <div className="accent-text text-[16px] font-medium">1,842</div>
               <div className="text-[10px] text-white/30">SOL wagered</div>
             </div>
             <div>

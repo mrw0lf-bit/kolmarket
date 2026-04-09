@@ -34,7 +34,7 @@ export function MyBetsTab({ bets }: MyBetsTabProps) {
               >
                 {bet.side} | {bet.pct}
               </span>
-              <span className="text-violet-400">{bet.sol} SOL</span>
+              <span className="accent-text">{bet.sol} SOL</span>
             </div>
           </div>
         ))}

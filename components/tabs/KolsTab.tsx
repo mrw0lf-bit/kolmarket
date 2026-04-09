@@ -12,7 +12,7 @@ export function KolsTab() {
         {KOLS.map((kol) => (
           <div
             key={kol.name}
-            className="rounded-xl border border-white/[0.07] bg-[#13131f] p-3.5 transition-colors cursor-pointer hover:border-violet-400/20"
+            className="accent-card-hover cursor-pointer rounded-xl border border-white/[0.07] bg-[#13131f] p-3.5 transition-colors"
           >
             <div className="mb-3 flex items-center gap-3">
               <Avatar initials={kol.initials} color={kol.color} size="lg" />
@@ -24,7 +24,7 @@ export function KolsTab() {
             </div>
             <div className="grid grid-cols-3 gap-2 text-center">
               <div>
-                <div className="text-[14px] font-medium text-violet-400">{kol.volume}</div>
+                <div className="accent-text text-[14px] font-medium">{kol.volume}</div>
                 <div className="text-[10px] text-white/30">volume</div>
               </div>
               <div>

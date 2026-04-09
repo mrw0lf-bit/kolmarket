@@ -2,7 +2,7 @@ import { AvatarColor } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const colorMap: Record<AvatarColor, string> = {
-  purple: "bg-violet-400/20 text-violet-400",
+  purple: "accent-bg-soft accent-text",
   green: "bg-green-400/15 text-green-400",
   orange: "bg-orange-400/15 text-orange-400",
   blue: "bg-blue-400/15 text-blue-400",

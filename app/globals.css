@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --font-geist-sans: 'Geist', system-ui, sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
+  --accent: #a78bfa;
+  --accent-alt: #7c3aed;
+  --accent-soft: rgba(167, 139, 250, 0.14);
+  --accent-hover: rgba(167, 139, 250, 0.2);
+  --accent-border: rgba(167, 139, 250, 0.3);
+  --accent-border-strong: rgba(167, 139, 250, 0.5);
+  --accent-banner: rgba(167, 139, 250, 0.08);
+  --app-bg: #0a0911;
+  --topbar-bg: #0f0d18;
+  --sidebar-bg: #0d0b16;
 }
 
 * {
@@ -13,49 +21,100 @@
 }
 
 html, body {
-  background: #0a0a0f;
-  color: #fff;
+  background: var(--app-bg);
+  color: #ffffff;
   overflow-x: hidden;
-  height: 100%;
 }
 
-body {
-  margin: 0;
+.theme-purple {
+  --accent: #a78bfa;
+  --accent-alt: #7c3aed;
+  --accent-soft: rgba(167, 139, 250, 0.14);
+  --accent-hover: rgba(167, 139, 250, 0.2);
+  --accent-border: rgba(167, 139, 250, 0.3);
+  --accent-border-strong: rgba(167, 139, 250, 0.5);
+  --accent-banner: rgba(167, 139, 250, 0.08);
+  --app-bg: #0a0911;
+  --topbar-bg: #0f0d18;
+  --sidebar-bg: #0d0b16;
 }
 
-#__next {
-  min-height: 100%;
+.theme-green {
+  --accent: #4ade80;
+  --accent-alt: #16a34a;
+  --accent-soft: rgba(74, 222, 128, 0.14);
+  --accent-hover: rgba(74, 222, 128, 0.2);
+  --accent-border: rgba(74, 222, 128, 0.3);
+  --accent-border-strong: rgba(74, 222, 128, 0.5);
+  --accent-banner: rgba(74, 222, 128, 0.08);
+  --app-bg: #0d0d0d;
+  --topbar-bg: #121212;
+  --sidebar-bg: #111111;
 }
 
-.app-shell {
-  width: min(100%, 1280px);
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background:
-    linear-gradient(180deg, rgba(18, 18, 30, 0.94) 0%, rgba(10, 10, 15, 0.98) 28%, #0a0a0f 100%);
+.theme-orange {
+  --accent: #fb923c;
+  --accent-alt: #f97316;
+  --accent-soft: rgba(251, 146, 60, 0.14);
+  --accent-hover: rgba(251, 146, 60, 0.2);
+  --accent-border: rgba(251, 146, 60, 0.3);
+  --accent-border-strong: rgba(251, 146, 60, 0.5);
+  --accent-banner: rgba(251, 146, 60, 0.08);
+  --app-bg: #010101;
+  --topbar-bg: #080808;
+  --sidebar-bg: #050505;
 }
 
-.shell-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.theme-shell {
+  background: var(--app-bg);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-@media (min-width: 1024px) {
-  .app-shell {
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-  }
+.bg-app { background: var(--app-bg); }
+.topbar-shell { background: var(--topbar-bg); }
+.sidebar-shell { background: var(--sidebar-bg); }
+
+.accent-text { color: var(--accent); }
+.accent-bg-soft { background-color: var(--accent-soft); }
+.accent-banner { background-color: var(--accent-banner); }
+.accent-border-soft { border-color: var(--accent-border); }
+.accent-dot { background-color: var(--accent); }
+.accent-gradient { background-image: linear-gradient(to right, var(--accent), var(--accent-alt)); }
+
+.accent-button {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-border);
 }
 
-/* Scrollbar */
+.accent-button:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-border-strong);
+}
+
+.theme-toggle-button {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.theme-toggle-button:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.theme-toggle-button-active {
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.accent-card-hover:hover {
+  border-color: var(--accent-border);
+}
+
 ::-webkit-scrollbar { width: 0px; height: 0px; }
 
-/* Chips horizontal scroll */
 .chips-scroll {
   display: flex;
   gap: 6px;
@@ -65,67 +124,61 @@ body {
 }
 .chips-scroll::-webkit-scrollbar { display: none; }
 
-/* Smooth transitions for interactive elements */
 button, [role="button"] {
   cursor: pointer;
   user-select: none;
 }
 
-/* Gradient bar animation */
-@keyframes barGrow {
-  from { width: 0%; }
-  to { width: var(--bar-width); }
-}
-
-.bar-animated {
-  animation: barGrow 0.6s ease-out forwards;
-}
-
-/* Live dot pulse */
+/* Live dot */
 @keyframes livePulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.35; transform: scale(0.8); }
 }
-.live-dot {
-  animation: livePulse 2s ease-in-out infinite;
-}
+.live-dot { animation: livePulse 2s ease-in-out infinite; }
 
-/* Card hover glow */
-.market-card-hot {
-  box-shadow: 0 0 0 0.5px rgba(251, 146, 60, 0.3);
-}
-.market-card-hot:hover {
-  box-shadow: 0 0 0 1px rgba(251, 146, 60, 0.5), 0 4px 24px rgba(251, 146, 60, 0.08);
-}
-.market-card-default:hover {
-  box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.35), 0 4px 24px rgba(167, 139, 250, 0.06);
-}
+/* Card hovers */
+.market-card-hot { box-shadow: 0 0 0 0.5px rgba(251,146,60,0.3); }
+.market-card-hot:hover { box-shadow: 0 0 0 1px rgba(251,146,60,0.5), 0 6px 28px rgba(251,146,60,0.09); }
+.market-card-default:hover { box-shadow: 0 0 0 1px rgba(167,139,250,0.35), 0 6px 28px rgba(167,139,250,0.07); }
 
-/* Bet flash animation */
+/* Bet flash */
 @keyframes betFlash {
   0% { transform: scale(1); }
-  30% { transform: scale(0.96); }
-  60% { transform: scale(1.02); }
+  35% { transform: scale(0.95); }
+  65% { transform: scale(1.03); }
   100% { transform: scale(1); }
 }
-.bet-flash {
-  animation: betFlash 0.4s ease-out;
-}
+.bet-flash { animation: betFlash 0.35s ease-out; }
 
-/* Stagger fade-up for cards */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-up {
-  animation: fadeUp 0.35s ease-out both;
-}
-
-/* Tab content transition */
+/* Tab content entrance */
 @keyframes tabIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.tab-content {
-  animation: tabIn 0.2s ease-out;
+.tab-content { animation: tabIn 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+/* Card stagger */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.animate-fade-up { animation: fadeUp 0.3s ease-out both; }
+
+/* Sidebar active item slide-in */
+@keyframes sidebarItem {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Probability bar grow */
+@keyframes barGrow {
+  from { width: 0 !important; }
+  to   { width: var(--bar-w); }
+}
+.bar-grow { animation: barGrow 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+/* Chip press */
+button:active { transform: scale(0.97); }
+
+/* Smooth page scroll */
+main { scroll-behavior: smooth; }
