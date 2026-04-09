@@ -59,33 +59,33 @@ export interface Bet {
 
 export const MARKETS: Market[] = [
   {
-    id: "m1", kolInitials: "AJ", kolColor: "purple", kolName: "AlphaJeet", kolHandle: "@alphajeet",
-    badge: "hot", question: "Will AlphaJeet make 100 SOL today?",
+    id: "m1", kolInitials: "AJ", kolColor: "purple", kolName: "Reljoo", kolHandle: "@reljoo",
+    badge: "hot", question: "Will Reljoo make 100 SOL today?",
     yesPct: 64, noPct: 36, pool: "182 SOL", timerId: "t1", initialTime: [14, 32], isHot: true, category: "SOL gains",
   },
   {
-    id: "m2", kolInitials: "SB", kolColor: "green", kolName: "SolBull", kolHandle: "@solbull",
-    badge: "live", question: "Will SolBull's next post hit 100 likes?",
+    id: "m2", kolInitials: "SB", kolColor: "green", kolName: "Euris", kolHandle: "@Euris_x",
+    badge: "live", question: "Will Euris's next post hit 100 likes?",
     yesPct: 71, noPct: 29, pool: "96 SOL", timerId: "t2", initialTime: [8, 17], category: "X posts",
   },
   {
-    id: "m3", kolInitials: "CK", kolColor: "orange", kolName: "CryptoKing", kolHandle: "@cryptoking",
-    badge: "live", question: "Will CryptoKing post 3+ times today?",
+    id: "m3", kolInitials: "CK", kolColor: "orange", kolName: "OgAnt", kolHandle: "@OgAnt",
+    badge: "live", question: "Will OgAnt post 3+ times today?",
     yesPct: 45, noPct: 55, pool: "54 SOL", timerId: "t3", initialTime: [22, 5], category: "X posts",
   },
   {
-    id: "m4", kolInitials: "DG", kolColor: "blue", kolName: "DegenGuru", kolHandle: "@degenguru",
-    badge: "soon", question: "Will DegenGuru's call 10x in 24h?",
+    id: "m4", kolInitials: "DG", kolColor: "blue", kolName: "Gake", kolHandle: "@Gake",
+    badge: "soon", question: "Will Gake's call 10x in 24h?",
     yesPct: 22, noPct: 78, pool: "210 SOL", startsIn: "Starts in 5m", category: "Crypto",
   },
   {
-    id: "m5", kolInitials: "NF", kolColor: "pink", kolName: "NFTqueen", kolHandle: "@nftqueen",
-    badge: "hot", question: "Will NFTqueen gain 500 followers today?",
+    id: "m5", kolInitials: "NF", kolColor: "pink", kolName: "Profit", kolHandle: "@Flipping Profit",
+    badge: "hot", question: "Will Profit gain 500 followers today?",
     yesPct: 58, noPct: 42, pool: "77 SOL", timerId: "t5", initialTime: [31, 44], isHot: true, category: "Followers",
   },
   {
-    id: "m6", kolInitials: "SW", kolColor: "purple", kolName: "SolWhale", kolHandle: "@solwhale",
-    badge: "live", question: "Will SolWhale's tweet get 500 views?",
+    id: "m6", kolInitials: "SW", kolColor: "purple", kolName: "Socharo", kolHandle: "@socharo",
+    badge: "live", question: "Will Socharo's tweet get 500 views?",
     yesPct: 83, noPct: 17, pool: "130 SOL", timerId: "t6", initialTime: [3, 58], category: "X posts",
   },
   {
