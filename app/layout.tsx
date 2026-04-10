@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "KOLmarket — Predict. Bet. Win.",
@@ -16,10 +24,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-      </head>
+    <html lang="en" suppressHydrationWarning className={montserrat.variable}>
       <body className="bg-[#0a0a0f] text-white antialiased font-sans">
         <div className="min-h-screen flex flex-col relative bg-[#0a0a0f] w-full">
           {children}
